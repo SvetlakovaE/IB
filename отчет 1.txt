@@ -1,0 +1,15 @@
+1. Просмотр списка пользователя системы                                                                                 
+[root@localhost ~]# vim /etc/passwd                                                                                                                                                                                                             root:x:0:0:root:/root:/bin/bash                                                                                         
+bin:x:1:1:bin:/bin:/sbin:/nologin                                                                                       
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown                                                                            
+halt:x:7:0:halt:/sbin:/sbin/halt                                                                                        
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin                                                                                                                                                                                                  2. Создание пользователя в системе (в режиме администратора)
+[root@localhost ~]# useradd -m -s /bin/bash userl                                                                                                                                                                                               userl:x:1000:1000::/home/userl:/bin/bash                                                                                                                                                                                                        3. Смена пароля пользователя (в режиме администратора)
+passwd userl                                                                                                            
+Changing password for user userl.                                                                                       
+New password:                                                                                                           
+BAD PASSWORD: The password is shorter than 8 characters                                                                 
+Retype new password:                                                                                                    
+passwd: all authentication tokens updated successfully                                                                                                                                                                                          4. Просмотр файла с теневыми паролями (в режиме администратора)                                                         
+vim/etc/shadow                                                                                                          
+userl:$6$zBDNi8/zHlk6dqI$JOW5EOEnWEqAcyaNt5aBMVDnT4Xbychx8sQkTF9RQN6DfPOqN6aPDJVHYGeVLsNvFCZL/JFb6Th0NIj.XKhQi/:20332:0:99999:7:::        
